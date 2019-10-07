@@ -1,0 +1,71 @@
+.chessie-image {
+  border-radius: 50%;
+}
+
+.chessie-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.train-toot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Pacifico', cursive;
+}
+
+.train-animation {
+  display: flex;
+  position: relative;
+  -webkit-animation-name: train; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  animation-name: train;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.train-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes train {
+  0% {
+    left: 0em;
+    top: 0em;
+  }
+  100% {
+    left: 50%;
+    top: 0em;
+  }
+}
+
+/* Standard syntax */
+@keyframes train {
+  0% {
+    left: 0em;
+    top: 0em;
+  }
+  100% {
+    left: 50%;
+    top: 0em;
+  }
+}
+
+.enter-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enter-button > button {
+  color: blue;
+  background-color: pink;
+  font-family: 'Pacifico', cursive;
+  margin: 1em;
+}

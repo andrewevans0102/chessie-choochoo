@@ -1,0 +1,44 @@
+.address {
+  margin-left: 1em;
+  font-family: 'Pacifico', cursive;
+}
+
+.information-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1em;
+}
+
+.time-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1em;
+}
+
+.day-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+}
+
+.chessie-picture {
+  display: flex;
+  border-radius: 50%;
+}
+
+.station-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-size: 2em;
+  font-family: 'Pacifico', cursive;
+  border-radius: 20em;
+}

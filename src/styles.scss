@@ -1,0 +1,86 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+h1 {
+  font-family: 'Pacifico', cursive;
+}
+
+body {
+  background-color: lightblue;
+}
+
+button {
+  font-family: 'Pacifico', cursive;
+  border-radius: 20em;
+}
+
+a {
+  font-family: 'Pacifico', cursive;
+}
+
+div {
+  font-family: 'Pacifico', cursive;
+}
+
+span {
+  font-family: 'Pacifico', cursive;
+}
+
+h2 {
+  font-family: 'Pacifico', cursive;
+}
+
+.back-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.back-button > button {
+  font-size: 2em;
+}
+
+.blue-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: blue;
+  width: 10em;
+  border-radius: 10em;
+  box-shadow: 0.25em 0.25em black;
+  margin-left: 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+}
+
+.picture-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actual-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10em;
+  height: 10em;
+  margin: 1em;
+  border-radius: 50%;
+}

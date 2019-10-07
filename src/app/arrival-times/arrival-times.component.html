@@ -1,0 +1,53 @@
+<div class="arrival-container">
+  <div *ngFor="let times of arrivalTimes" class="arrival-output">
+    <div class="arrival-time">
+      <div class="arrival-row">
+        <div class="arrival-title">
+          Line:
+        </div>
+        <div
+          class="arrival-line"
+          [ngStyle]="{
+            'background-color': getLineBackgroundColor(times.Line)
+          }"
+          *ngIf="times.Line !== 'BL'"
+        >
+          {{ getLineBackgroundColor(times.Line) }}
+        </div>
+        <div class="blue-line" *ngIf="times.Line === 'BL'">
+          {{ getLineBackgroundColor(times.Line) }}
+        </div>
+      </div>
+      <div class="arrival-row">
+        <div class="arrival-title">
+          Dest:
+        </div>
+        <div class="arrival-destination">
+          {{ times.Destination }}
+        </div>
+      </div>
+      <div class="arrival-row">
+        <div class="arrival-title">
+          Mins:
+        </div>
+        <div class="arrival-minutes">
+          <div *ngIf="times.Min === 'BRD'">
+            BOARDING
+          </div>
+          <div *ngIf="times.Min === 'ARR'">
+            ARRIVING
+          </div>
+          <div *ngIf="times.Min === 'DLY'">
+            DELAYED
+          </div>
+          <div *ngIf="times.Min !== 'BRD' && times.Min !== 'ARR'">
+            {{ times.Min }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spinner-container">
+    <mat-spinner *ngIf="arrivalTimes.length === 0"></mat-spinner>
+  </div>
+</div>

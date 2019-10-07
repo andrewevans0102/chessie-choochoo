@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="picture-container">
+  <img src="../../assets/bookmarks.png" class="actual-picture" />
+</div>
+<div class="show-line">
+  <div
+    class="selected-line"
+    [ngStyle]="{
+      'background-color': getLineBackgroundColor(lineCode)
+    }"
+    *ngIf="metroLine !== 'blue'"
+  >
+    {{ metroLine }} LINE
+  </div>
+  <div class="blue-line" *ngIf="metroLine === 'blue'">{{ metroLine }} LINE</div>
+</div>
+<div class="arrival-container">
+  <app-arrival-times
+    [selectedCode]="stationCode"
+    *ngIf="stationCode !== undefined"
+  ></app-arrival-times>
+</div>
+<div class="back-button">
+  <button mat-raised-button color="warn" (click)="back()">back</button>
+</div>

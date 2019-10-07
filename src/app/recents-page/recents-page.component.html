@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="picture-container">
+  <img src="../../assets/recents.JPG" class="actual-picture" />
+</div>
+<div class="recents-container" *ngFor="let recent of recents">
+  <div class="recents">
+    <button (click)="goToBookmarksPage(recent)" class="bookmark-button">
+      <div
+        class="metro-line"
+        [ngStyle]="{
+          'background-color': recent.metroLine
+        }"
+        *ngIf="recent.metroLine !== 'blue'"
+      >
+        {{ recent.metroLine }}
+      </div>
+      <div class="blue-line" *ngIf="recent.metroLine === 'blue'">
+        blue
+      </div>
+      <span class="metro-station">{{ recent.stationName }}</span>
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      class="delete-button"
+      (click)="deleteRecent(recent.count)"
+    >
+      X
+    </button>
+  </div>
+</div>
+<div class="back-button">
+  <button mat-raised-button color="warn" (click)="back()">back</button>
+</div>

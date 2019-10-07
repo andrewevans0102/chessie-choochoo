@@ -1,0 +1,168 @@
+.tab-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1em;
+}
+
+.tab-label {
+  margin-right: 8px;
+}
+
+.route-information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.arrival-times {
+  display: flex;
+  flex-direction: column;
+}
+
+.station-name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1em;
+  // transform: rotate(-20grad);
+}
+
+.station-name > button {
+  display: flex;
+  align-items: center;
+  margin-left: 0.25em;
+  color: lightblue;
+  // transform: rotate(315);
+  // transform: rotate(-50grad);
+}
+
+.route-name {
+  width: 15em;
+  border-radius: 2em;
+}
+
+i {
+  font-size: 2em;
+  background-color: lightblue;
+}
+
+button {
+  border-radius: 20em;
+}
+
+.arrival-container {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.arrival-time {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  font-family: 'Pacifico', cursive;
+}
+
+.arrival-title {
+  font-size: 1.25em;
+}
+
+.arrival-line {
+  margin-left: 1em;
+  width: 10em;
+  border-radius: 10em;
+  text-align: center;
+}
+
+.arrival-minutes {
+  margin-left: 1em;
+  width: 10em;
+}
+
+.arrival-destination {
+  margin-left: 1em;
+  width: 10em;
+}
+
+.arrival-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrival-output {
+  margin: 1em;
+  border-bottom: solid;
+}
+
+button {
+  background-color: black;
+  color: lightblue;
+  font-family: 'Pacifico', cursive;
+}
+
+.option-label {
+  color: lightblue;
+}
+
+.bookmark-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border-top: solid;
+  // border-color: gray;
+}
+
+.bookmark-button > button {
+  background-color: green;
+  width: 100%;
+  margin: 1em;
+  box-shadow: 0.25em 0.25em black;
+}
+
+.selected-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Pacifico', cursive;
+  width: 10em;
+  border-radius: 10em;
+  box-shadow: 0.25em 0.25em black;
+  text-transform: uppercase;
+}
+
+.show-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin: 1em;
+}
+
+.select-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-buttons {
+  display: flex;
+}
+
+a {
+  font-size: 2em;
+}
+
+.route-order {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: lightblue;
+  border-radius: 2em;
+  padding: 0.5em;
+  // padding: 0.5em;
+  // font-size: 2em;
+}

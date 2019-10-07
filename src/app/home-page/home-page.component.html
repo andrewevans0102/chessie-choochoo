@@ -1,0 +1,90 @@
+<app-header></app-header>
+<div class="select-line">
+  <mat-form-field>
+    <mat-label>metro line</mat-label>
+    <mat-select [(value)]="selectedLine" (selectionChange)="updateLine($event)">
+      <mat-option
+        *ngFor="let metroLine of metroLines"
+        [value]="metroLine.abbv"
+        class="option-label"
+        [ngStyle]="{
+          'background-color': metroLine.name
+        }"
+      >
+        <div>
+          {{ metroLine.name }}
+        </div>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="tab-container">
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-label">access_time</mat-icon>
+        <div class="tab-text">Times</div>
+      </ng-template>
+      <div class="arrival-times">
+        <div class="picture-container">
+          <img src="../assets/arrival_times.png" class="actual-picture" />
+        </div>
+        <mat-form-field *ngIf="selectedLine !== undefined">
+          <mat-label class="station-label">Station</mat-label>
+          <mat-select
+            [(value)]="selectedCode"
+            class="station-select"
+            (selectionChange)="showTimes($event)"
+          >
+            <mat-option
+              *ngFor="let station of stationList"
+              [value]="station.code"
+              class="station-option"
+            >
+              {{ station.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="arrival-container" *ngIf="selectedLine !== undefined">
+          <app-arrival-times
+            [selectedCode]="selectedCode"
+            *ngIf="selectedCode !== undefined"
+          ></app-arrival-times>
+          <div class="bookmark-button" *ngIf="selectedCode !== undefined">
+            <a
+              routerLink="/bookmarks-page/{{ selectedLine }}/{{ selectedCode }}"
+              routerLinkActive="active"
+              >bookmark</a
+            >
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="tab-label">directions_railway</mat-icon>
+        <div>Route</div>
+      </ng-template>
+      <div class="route-information">
+        <div class="picture-container">
+          <img src="../assets/standard_route.png" class="actual-picture" />
+        </div>
+        <div *ngIf="standardRoute.length > 0">
+          <div *ngFor="let route of standardRoute">
+            <div class="station-name">
+              <div class="route-order">{{ route.order }}</div>
+              <button (click)="getArrivalTime(route)">
+                <div class="route-name">
+                  {{ route.name }}
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+  <div class="back-button">
+    <button mat-raised-button color="warn" (click)="back()">back</button>
+  </div>
+</div>

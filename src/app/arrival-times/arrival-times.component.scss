@@ -1,0 +1,90 @@
+.arrival-container {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.arrival-time {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  font-family: 'Pacifico', cursive;
+}
+
+.arrival-title {
+  font-size: 1.25em;
+}
+
+.arrival-line {
+  margin-left: 1em;
+  width: 10em;
+  border-radius: 10em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.arrival-minutes {
+  margin-left: 1em;
+  width: 10em;
+}
+
+.arrival-destination {
+  margin-left: 1em;
+  width: 10em;
+}
+
+.arrival-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrival-output {
+  margin: 1em;
+  border-bottom: solid;
+}
+
+button {
+  background-color: black;
+  color: lightblue;
+  font-family: 'Pacifico', cursive;
+  border-radius: 20em;
+}
+
+.bookmark-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border-top: solid;
+  // border-color: gray;
+}
+
+.bookmark-button > button {
+  background-color: green;
+  width: 100%;
+  color: white;
+  margin: 1em;
+  box-shadow: 0.25em 0.25em black;
+}
+
+.selected-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Pacifico', cursive;
+  width: 10em;
+  border-radius: 10em;
+  box-shadow: 0.25em 0.25em black;
+}
+
+.show-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin: 1em;
+}
+
+.select-buttons {
+  display: flex;
+}
