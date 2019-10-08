@@ -10,7 +10,7 @@ import { MapPageComponent } from './map-page/map-page.component';
 
 const routes: Routes = [
   { path: 'landing-page', component: LandingPageComponent },
-  { path: 'home', component: HomePageComponent },
+  { path: 'home/:LineCode', component: HomePageComponent },
   {
     path: 'station-information/:LineCode/:StationCode',
     component: StationInformationComponent

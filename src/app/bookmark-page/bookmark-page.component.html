@@ -8,11 +8,9 @@
     [ngStyle]="{
       'background-color': getLineBackgroundColor(lineCode)
     }"
-    *ngIf="metroLine !== 'blue'"
   >
     {{ metroLine }} LINE
   </div>
-  <div class="blue-line" *ngIf="metroLine === 'blue'">{{ metroLine }} LINE</div>
   <div class="station-name">{{ stationName }} Station</div>
 </div>
 <div class="arrival-container">
@@ -20,7 +18,4 @@
     [selectedCode]="stationCode"
     *ngIf="stationCode !== undefined"
   ></app-arrival-times>
-</div>
-<div class="back-button">
-  <button mat-raised-button color="warn" (click)="back()">back</button>
 </div>

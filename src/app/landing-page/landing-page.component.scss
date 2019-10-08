@@ -15,6 +15,12 @@
   font-family: 'Pacifico', cursive;
 }
 
+.select-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .train-animation {
   display: flex;
   position: relative;
@@ -55,17 +61,4 @@
     left: 50%;
     top: 0em;
   }
-}
-
-.enter-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.enter-button > button {
-  color: blue;
-  background-color: pink;
-  font-family: 'Pacifico', cursive;
-  margin: 1em;
 }

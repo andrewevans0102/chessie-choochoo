@@ -30,15 +30,8 @@ h2 {
   font-family: 'Pacifico', cursive;
 }
 
-.back-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2em;
-}
-
-.back-button > button {
-  font-size: 2em;
+p {
+  font-family: 'Pacifico', cursive;
 }
 
 .blue-line {
@@ -82,4 +75,33 @@ h2 {
   height: 10em;
   margin: 1em;
   border-radius: 50%;
+}
+
+.enter-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enter-button > button {
+  color: blue;
+  background-color: pink;
+  font-family: 'Pacifico', cursive;
+  margin: 1em;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+.title > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Pacifico', cursive;
 }

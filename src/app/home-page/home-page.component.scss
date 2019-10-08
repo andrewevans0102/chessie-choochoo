@@ -26,17 +26,15 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 1em;
+  margin: 0.5em;
   // transform: rotate(-20grad);
 }
 
-.station-name > button {
+.hint {
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin-left: 0.25em;
-  color: lightblue;
-  // transform: rotate(315);
-  // transform: rotate(-50grad);
+  margin: 0.5em;
 }
 
 .route-name {
@@ -98,12 +96,6 @@ button {
   border-bottom: solid;
 }
 
-button {
-  background-color: black;
-  color: lightblue;
-  font-family: 'Pacifico', cursive;
-}
-
 .option-label {
   color: lightblue;
 }
@@ -123,7 +115,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  // margin: 1em;
+  margin: 1em;
 }
 
 .select-line {
@@ -144,9 +136,9 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  color: lightblue;
-  border-radius: 2em;
+  // background-color: black;
+  // color: lightblue;
+  // border-radius: 2em;
   padding: 0.5em;
   // padding: 0.5em;
   // font-size: 2em;

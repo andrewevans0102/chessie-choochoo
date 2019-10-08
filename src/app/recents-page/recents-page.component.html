@@ -2,6 +2,9 @@
 <div class="picture-container">
   <img src="../../assets/recents.JPG" class="actual-picture" />
 </div>
+<div class="show-line">
+  <div>Stations You Recently Searched</div>
+</div>
 <div class="recents-parent" *ngIf="recents !== undefined">
   <div class="recents-container" *ngFor="let recent of recents">
     <div class="recents">
@@ -30,7 +33,4 @@
       </button>
     </div>
   </div>
-</div>
-<div class="back-button">
-  <button mat-raised-button color="warn" (click)="back()">back</button>
 </div>

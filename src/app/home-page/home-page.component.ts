@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MetroService } from '../services/metro.service';
 import { MetroLine } from '../models/metro-line/metro-line';
 
@@ -8,23 +8,24 @@ import { MetroLine } from '../models/metro-line/metro-line';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent {
-  metroLines: MetroLine[] = [
-    { abbv: 'RD', name: 'Red' },
-    { abbv: 'BL', name: 'Blue' },
-    { abbv: 'YL', name: 'Yellow' },
-    { abbv: 'OR', name: 'Orange' },
-    { abbv: 'GR', name: 'Green' },
-    { abbv: 'SV', name: 'Silver' }
-  ];
-  selectedLine: string;
+export class HomePageComponent implements OnInit {
   standardRoute = [];
   selectedCode: string;
   stationList: any;
   arrivalTimes = [];
   metroLine: string;
+  lineCode: string;
 
-  constructor(private router: Router, private metroService: MetroService) {}
+  constructor(
+    private router: Router,
+    private metroService: MetroService,
+    public route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    this.lineCode = this.route.snapshot.paramMap.get('LineCode');
+    this.loadInformation(this.lineCode);
+  }
 
   async loadInformation(lineCode: string) {
     try {
@@ -32,7 +33,7 @@ export class HomePageComponent {
       this.stationList = [];
       this.standardRoute = await this.metroService.getStationRoute(lineCode);
       this.stationList = await this.metroService.getStationList(lineCode);
-      this.selectedCode = undefined;
+      this.metroLine = this.getLineBackgroundColor(lineCode);
     } catch (error) {
       alert(error);
     }
@@ -40,7 +41,7 @@ export class HomePageComponent {
 
   getArrivalTime(route: any) {
     this.router.navigateByUrl(
-      `/station-information/${this.selectedLine}/${route.code}`
+      `/station-information/${this.lineCode}/${route.code}`
     );
   }
 
@@ -53,8 +54,8 @@ export class HomePageComponent {
     );
     recentStorage.push({
       recorded: Date.now(),
-      link: `/bookmarks-page/${this.selectedLine}/${this.selectedCode}`,
-      metroLine: this.metroService.getLineByCode(this.selectedLine),
+      link: `/bookmarks-page/${this.lineCode}/${this.selectedCode}`,
+      metroLine: this.metroService.getLineByCode(this.lineCode),
       stationName: station.Name
     });
     localStorage.setItem(
@@ -63,9 +64,9 @@ export class HomePageComponent {
     );
   }
 
-  async updateLine(event: any) {
-    this.loadInformation(this.selectedLine);
-  }
+  // async updateLine(event: any) {
+  //   this.loadInformation(this.selectedLine);
+  // }
 
   getLineBackgroundColor(color: string) {
     let backgroundColor = '';
