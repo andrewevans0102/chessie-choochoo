@@ -108,21 +108,6 @@ button {
   color: lightblue;
 }
 
-.bookmark-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // border-top: solid;
-  // border-color: gray;
-}
-
-.bookmark-button > button {
-  background-color: green;
-  width: 100%;
-  margin: 1em;
-  box-shadow: 0.25em 0.25em black;
-}
-
 .selected-line {
   display: flex;
   justify-content: center;

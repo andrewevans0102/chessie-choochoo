@@ -52,13 +52,6 @@
             [selectedCode]="selectedCode"
             *ngIf="selectedCode !== undefined"
           ></app-arrival-times>
-          <div class="bookmark-button" *ngIf="selectedCode !== undefined">
-            <a
-              routerLink="/bookmarks-page/{{ selectedLine }}/{{ selectedCode }}"
-              routerLinkActive="active"
-              >bookmark</a
-            >
-          </div>
         </div>
       </div>
     </mat-tab>
