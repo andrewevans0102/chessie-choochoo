@@ -166,3 +166,11 @@ a {
   // padding: 0.5em;
   // font-size: 2em;
 }
+
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1em;
+}

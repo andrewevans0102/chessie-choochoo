@@ -6,6 +6,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { StationInformationComponent } from './station-information/station-information.component';
 import { RecentsPageComponent } from './recents-page/recents-page.component';
 import { BookmarkPageComponent } from './bookmark-page/bookmark-page.component';
+import { MapPageComponent } from './map-page/map-page.component';
 
 const routes: Routes = [
   { path: 'landing-page', component: LandingPageComponent },
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'bookmarks-page/:LineCode/:StationCode',
     component: BookmarkPageComponent
+  },
+  {
+    path: 'map-page',
+    component: MapPageComponent
   },
   { path: '', redirectTo: '/landing-page', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }

@@ -7,30 +7,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./recents-page.component.scss']
 })
 export class RecentsPageComponent implements OnInit {
-  recents = [];
   constructor(public router: Router) {}
+  recents = [];
 
   ngOnInit() {
     const recentStorage = JSON.parse(
       localStorage.getItem('chessieChooChooRecents')
     );
     let recentCount = 0;
-    // check for any values that are too old
-    recentStorage.forEach(recent => {
-      const recentDate = new Date(recent.recorded);
-      const sevenDays = 24 * 60 * 60 * 1000 * 7; // 7 days
-      // const sevenDays = 1000 * 60;
-      const todaysDate = new Date();
-      const sevenDaysAgoNumber = todaysDate.getTime() - sevenDays;
-      const sevenDaysAgoDate = new Date(sevenDaysAgoNumber);
-      if (recentDate.getTime() > sevenDaysAgoDate.getTime()) {
-        this.recents.push({
-          ...recent,
-          count: recentCount
-        });
-        recentCount++;
-      }
-    });
+    if (recentStorage !== null) {
+      // check for any values that are too old
+      recentStorage.forEach(recent => {
+        const recentDate = new Date(recent.recorded);
+        const sevenDays = 24 * 60 * 60 * 1000 * 7; // 7 days
+        // const sevenDays = 1000 * 60;
+        const todaysDate = new Date();
+        const sevenDaysAgoNumber = todaysDate.getTime() - sevenDays;
+        const sevenDaysAgoDate = new Date(sevenDaysAgoNumber);
+        if (recentDate.getTime() > sevenDaysAgoDate.getTime()) {
+          this.recents.push({
+            ...recent,
+            count: recentCount
+          });
+          recentCount++;
+        }
+      });
+    }
 
     // save the values to localStorage and overwrite any older ones
     localStorage.setItem(

@@ -12,6 +12,7 @@ import { RecentsPageComponent } from './recents-page/recents-page.component';
 import { HeaderComponent } from './header/header.component';
 import { BookmarkPageComponent } from './bookmark-page/bookmark-page.component';
 import { ArrivalTimesComponent } from './arrival-times/arrival-times.component';
+import { MapPageComponent } from './map-page/map-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ArrivalTimesComponent } from './arrival-times/arrival-times.component';
     RecentsPageComponent,
     HeaderComponent,
     BookmarkPageComponent,
-    ArrivalTimesComponent
+    ArrivalTimesComponent,
+    MapPageComponent
   ],
   imports: [BrowserModule, AppRoutingModule, MaterialModule],
   providers: [],

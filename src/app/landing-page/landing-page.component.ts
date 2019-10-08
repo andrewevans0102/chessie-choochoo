@@ -24,4 +24,12 @@ export class LandingPageComponent implements OnInit {
   goToRecentsPage() {
     this.router.navigateByUrl('/recents-page');
   }
+
+  goToMapPage() {
+    this.router.navigateByUrl('/map-page');
+  }
+
+  goToWMATATwitter() {
+    window.open('https://twitter.com/wmata', '_blank');
+  }
 }

@@ -18,7 +18,7 @@
     </mat-select>
   </mat-form-field>
 </div>
-<div class="tab-container">
+<div class="tab-container" *ngIf="selectedLine !== undefined; else elseBlock">
   <mat-tab-group>
     <mat-tab>
       <ng-template mat-tab-label>
@@ -29,7 +29,9 @@
         <div class="picture-container">
           <img src="../assets/arrival_times.png" class="actual-picture" />
         </div>
-        <mat-form-field *ngIf="selectedLine !== undefined">
+        <mat-form-field
+          *ngIf="selectedLine !== undefined && stationList.length > 0"
+        >
           <mat-label class="station-label">Station</mat-label>
           <mat-select
             [(value)]="selectedCode"
@@ -84,7 +86,18 @@
       </div>
     </mat-tab>
   </mat-tab-group>
-  <div class="back-button">
-    <button mat-raised-button color="warn" (click)="back()">back</button>
+</div>
+<ng-template #elseBlock>
+  <div class="message-container">
+    <i class="material-icons">
+      arrow_upward
+    </i>
+    <p>Select a line to get started!</p>
+    <div class="picture-container">
+      <img src="../../assets/recents.JPG" class="actual-picture" />
+    </div>
   </div>
+</ng-template>
+<div class="back-button">
+  <button mat-raised-button color="warn" (click)="back()">back</button>
 </div>

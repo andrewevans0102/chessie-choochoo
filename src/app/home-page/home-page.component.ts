@@ -1,10 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Station } from '../models/station/station';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MetroService } from '../services/metro.service';
-import { interval } from 'rxjs';
-import { takeUntil, catchError } from 'rxjs/operators';
 import { MetroLine } from '../models/metro-line/metro-line';
 
 @Component({
@@ -12,7 +8,7 @@ import { MetroLine } from '../models/metro-line/metro-line';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit, OnDestroy {
+export class HomePageComponent {
   metroLines: MetroLine[] = [
     { abbv: 'RD', name: 'Red' },
     { abbv: 'BL', name: 'Blue' },
@@ -22,33 +18,18 @@ export class HomePageComponent implements OnInit, OnDestroy {
     { abbv: 'SV', name: 'Silver' }
   ];
   selectedLine: string;
-
   standardRoute = [];
   selectedCode: string;
   stationList: any;
   arrivalTimes = [];
   metroLine: string;
-  arrivalTimesAsObservable: Observable<any>;
-  arrivalTimesAsSubscription: any;
-  private unsubscribe$ = new Subject<void>();
 
-  constructor(
-    private router: Router,
-    private route: ActivatedRoute,
-    private metroService: MetroService
-  ) {}
-
-  ngOnInit() {
-    // this.loadInitialMetroInformation();
-  }
-
-  ngOnDestroy() {
-    // this.unsubscribe$.next();
-    // this.unsubscribe$.complete();
-  }
+  constructor(private router: Router, private metroService: MetroService) {}
 
   async loadInformation(lineCode: string) {
     try {
+      this.standardRoute = [];
+      this.stationList = [];
       this.standardRoute = await this.metroService.getStationRoute(lineCode);
       this.stationList = await this.metroService.getStationList(lineCode);
       this.selectedCode = undefined;

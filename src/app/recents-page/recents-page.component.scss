@@ -4,8 +4,7 @@
   align-items: center;
   border-radius: 10em;
   text-transform: uppercase;
-  width: 10em;
-  box-shadow: 0.25em 0.25em black;
+  width: 8em;
   margin-left: 1em;
   text-align: center;
 }
@@ -47,4 +46,9 @@
   justify-content: center;
   align-items: center;
   border-radius: 10em;
+}
+
+.bookmark-button {
+  background-color: lightgray;
+  color: blue;
 }
