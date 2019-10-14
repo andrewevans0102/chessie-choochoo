@@ -4,12 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "ng build --prod",
+    "unit-test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "setup-local": "./scripts/setup_local.sh",
-    "setup-commit": "./scripts/setup_commit.sh"
+    "setup-commit": "./scripts/setup_commit.sh",
+    "deploy": "firebase deploy"
   },
   "private": true,
   "dependencies": {
