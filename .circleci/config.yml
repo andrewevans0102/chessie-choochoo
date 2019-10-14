@@ -39,6 +39,8 @@ jobs:
           paths:
             - dist/chessie-choochoo
             - package.json
+            - firebase.json
+            - .firebaserc
 
   deploy:
     docker:
